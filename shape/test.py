@@ -1,4 +1,5 @@
 import unittest
+
 from shape import Rectangle
 
 
@@ -42,3 +43,15 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.get_height(), 4)
         r.set_height(8)
         self.assertEqual(r.get_height(), 8)
+
+
+class TestSquare(unittest.TestCase):
+    def test_compute_area(self):
+        s = Square(4)
+        self.assertEqual(s.compute_area(), 16)
+
+        s = Square(1)
+        self.assertEqual(s.compute_area(), 1)
+
+        s = Square(7)
+        self.assertEqual(s.compute_area(), 49)
