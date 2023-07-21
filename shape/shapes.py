@@ -1,4 +1,13 @@
-class Rectangle:
+from abc import ABC, abstractmethod
+
+
+class Shape(ABC):
+    @abstractmethod
+    def compute_area(self):
+        ...
+
+
+class Rectangle(Shape):
 
     def __init__(self, height, width):
         self.height = height
@@ -18,3 +27,12 @@ class Rectangle:
 
     def set_height(self, new_height):
         self.height = new_height
+
+
+class Square(Shape):
+
+    def __init__(self, edge):
+        self.edge = edge
+
+    def compute_area(self):
+        return self.edge * self.edge
